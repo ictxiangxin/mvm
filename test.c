@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include "mvm.h"
 
 int main()
 {
-    printf("ict\n");
+    MCB* vm = mvm_initialize(0x1000, null);
     return 0;
 }

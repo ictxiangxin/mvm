@@ -30,3 +30,10 @@
         new_mvm->io_map[i] = null;
     return new_mvm;
 }
+
+void mvm_destory(MCB *mcb)
+{
+    if (mcb->memory_type == memory_type_in)
+        free(mcb->memory);
+    free(mcb);
+}

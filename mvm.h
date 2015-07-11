@@ -5,6 +5,7 @@
 #define u8 unsigned char
 #define u32 unsigned int
 #define pointer void *
+#define bool unsigned char
 
 #define memory_type_out 0
 #define memory_type_in  1
@@ -29,5 +30,6 @@ typedef struct mvm_contral_block {
 } MCB;
 
 MCB* mvm_initialize(u32 memory_size, pointer memory_address);
+void mvm_destory(MCB *mcb);
 
 #endif //_MVM_H_

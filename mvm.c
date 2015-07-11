@@ -31,7 +31,7 @@
     return new_mvm;
 }
 
-void mvm_destory(MCB *mcb)
+void mvm_destroy(MCB *mcb)
 {
     if (mcb->memory_type == memory_type_in)
         free(mcb->memory);

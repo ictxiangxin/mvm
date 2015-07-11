@@ -30,6 +30,6 @@ typedef struct mvm_contral_block {
 } MCB;
 
 MCB* mvm_initialize(u32 memory_size, pointer memory_address);
-void mvm_destory(MCB *mcb);
+void mvm_destroy(MCB *mcb);
 
 #endif //_MVM_H_

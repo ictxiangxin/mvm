@@ -36,6 +36,6 @@ typedef struct mvm_contral_block {
 MCB* mvm_initialize(u32 memory_size, pointer memory_address);
 void mvm_destroy(MCB *mcb);
 bool mvm_set_io_map(MCB *mcb, u32 port, u32 *address, void (*function)());
-bool mvm_load_code(MCB *mcb, u8 *code, u32 code_size, pointer address);
+bool mvm_load_code(MCB *mcb, u8 *code, u32 code_size, u32 address);
 
 #endif //_MVM_H_

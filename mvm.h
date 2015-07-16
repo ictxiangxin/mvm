@@ -7,10 +7,13 @@
 #define pointer void *
 #define bool unsigned char
 
+#define TRUE 1
+#define FALSE 0
+
 #define memory_type_out 0
 #define memory_type_in  1
 
-#define io_map_size 0x10
+#define io_size 0x10
 
 typedef struct mvm_contral_block {
     u32 memory_size;
@@ -26,10 +29,13 @@ typedef struct mvm_contral_block {
     u32 r7;
     u32 ip;
     u32 sp;
-    pointer io_map[io_map_size];
+    u32 *io_map[io_size];
+    void (*io_function[io_size])();
 } MCB;
 
 MCB* mvm_initialize(u32 memory_size, pointer memory_address);
 void mvm_destroy(MCB *mcb);
+bool mvm_set_io_map(MCB *mcb, u32 port, u32 *address, void (*function)());
+bool mvm_load_code(MCB *mcb, u8 *code, u32 code_size, pointer address);
 
 #endif //_MVM_H_
